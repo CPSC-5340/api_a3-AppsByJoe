@@ -14,19 +14,20 @@ struct Characters: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(ramvm.ramData) { character in
+                ForEach(ramvm.ramData) { ramCharacter in
                     NavigationLink {
-                        CharacterDetail(character: character)
+                        CharacterDetail(ramCharacter: ramCharacter)
                     } label: {
-                        Text(character.name)
+                        Text(ramCharacter.name)
                     }
                 }
             }
             .task {
                 await ramvm.fetchData()
             }
+//            .listStyle(.grouped)
+            .navigationTitle("R&M Characters")
         }
-        .navigationTitle("Rick and Morty Characters")
     }
 }
 

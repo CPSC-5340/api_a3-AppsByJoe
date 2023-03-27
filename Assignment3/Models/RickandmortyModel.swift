@@ -11,10 +11,8 @@ struct RickandmortyResults : Codable {
     let data : [CharacterModel]
 }
 
-struct CharacterModel : Codable, Identifiable {
-    // TODO: 
+struct CharacterModel : Codable, Identifiable{
     let id : Int
-    
     let name : String
     let status : String
     let gender : String
